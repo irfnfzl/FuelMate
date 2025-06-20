@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FuelMate</title>
+  <link rel="icon" href="favicon.png" type="image/png" />
+
+  <!-- Import modern font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --main-color: #006666;
+      --accent-color: #00cccc;
+      --text-color: #1a1a1a;
+      --bg-light: #f4f4f4;
+      --white: #fff;
+      --shadow: rgba(0, 0, 0, 0.1);
+      --radius: 12px;
+      --transition: 0.3s ease;
+      --font-family: 'Inter', sans-serif;
+      --header-footer-bg: #fff;
+      --header-footer-color: #09413a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-image: url('bgs.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: var(--text-color);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header {
+      background: var(--header-footer-bg);
+      border-bottom: 1px solid #e0e0e0;
+      padding: 1.25rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    .modern-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .brand {
+      font-weight: 800;
+      font-size: 1.9rem;
+      letter-spacing: 1px;
+      color: var(--header-footer-color);
+    }
+
+    nav {
+      display: flex;
+      gap: 1.25rem;
+    }
+
+    nav a {
+      color: var(--header-footer-color);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+      transition: all 0.25s ease;
+      background-color: transparent;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 4px;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background-color: var(--main-color);
+      transition: width 0.3s ease, left 0.3s ease;
+    }
+
+    nav a:hover::after,
+    nav a.active::after {
+      width: 100%;
+      left: 0;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: var(--main-color);
+    }
+
+    main {
+      flex-grow: 1;
+      padding: 2rem;
+      background: #013735;
+      min-height: calc(100vh - 112px);
+      overflow-y: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .section-content {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: var(--radius);
+      box-shadow: none;
+      width: 100%;
+      max-width: 1300px;
+      margin: 0 auto; /* Ensure it is centered */
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: var(--header-footer-bg);
+      color: var(--header-footer-color);
+      user-select: none;
+      font-size: 0.9rem;
+      box-shadow: 0 -4px 12px var(--shadow);
+      font-family: var(--font-family);
+      font-weight: 600;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      main {
+        padding: 2rem;
+        min-height: auto;
+      }
+
+      nav {
+        gap: 1rem;
+      }
+
+      nav a {
+        font-size: 1rem;
+      }
+
+      header {
+        padding: 1rem 1.5rem;
+      }
+
+      .container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container modern-header">
+      <div class="brand">Fuel Mate</div>
+      <nav>
+        <a href="#" onclick="showSection('main'); return false;" class="active">Home</a>
+        <a href="#" onclick="showSection('dashboard1'); return false;">Dashboard</a>
+        <a href="#" onclick="showSection('aboutus'); return false;">About Us</a>
+        <a href="#" onclick="showSection('overview'); return false;">Overview</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content" tabindex="0">
+    <div class="section-content" style="background-color: #ffffff; padding: 2rem; box-sizing: border-box; margin: 0 auto; width: 100%; max-width: 1300px;">
+      
+      <!-- Title and Explanation outside the box -->
+      <div style="text-align: center; margin-bottom: 2rem;">
+        <h2 style="color: #013735; font-size: 1.8rem;">Dashboard</h2>
+        <p style="font-size: 1rem; color: #013735;">
+          Here you will find the first set of visual insights such as service availability and station density across states.
+        </p>
+      </div>
+
+      <!-- Power BI Embed Placeholder -->
+      <div style="
+        width: 100%;
+        height: 75vh; /* Resize the iframe height */
+        margin: 0 auto; /* Ensure it's centered */
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      ">
+        <iframe title="Fuel Mate Dashboard"
+                src="https://app.powerbi.com/view?r=eyJrIjoiYTU3NzExMjYtNjM2My00NTRmLTg3YjEtOGYyNmEyNmViMzRmIiwidCI6ImNkY2JiMGUyLTlmZWEtNGY1NC04NjcwLTY3MjcwNzc5N2FkYSIsImMiOjEwfQ%3D%3D"
+                frameborder="0"
+                allowFullScreen="true"
+                style="width: 100%; height: 100%; border: none;">
+        </iframe>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Fuel Mate. All rights reserved.
+  </footer>
+
+  <script>
+    const pages = {
+      main: 'main.html',
+      dashboard1: 'dashboard1.html',
+      aboutus: 'aboutus.html',
+      overview: 'overview.html',
+    };
+
+    function showSection(section) {
+      fetch(pages[section])
+        .then(res => {
+          if (!res.ok) throw new Error('Failed to load');
+          return res.text();
+        })
+        .then(html => {
+          const content = document.getElementById('content');
+          content.innerHTML = html;
+          content.focus();
+          // Update active link
+          document.querySelectorAll('nav a').forEach(link => link.classList.remove('active'));
+          document.querySelector(`nav a[onclick*="${section}"]`).classList.add('active');
+        })
+        .catch(() => {
+          document.getElementById('content').innerHTML = '<p>Sorry, failed to load content.</p>';
+        });
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      showSection('main');
+    });
+  </script>
+</body>
+</html>

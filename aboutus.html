@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About FuelMate</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: var(--font-family);
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    .about-wrapper {
+      max-width: 960px;
+      margin: 4rem auto;
+      padding: 2rem;
+      background-color: var(--white);
+      border-radius: var(--radius);
+      box-shadow: 0 6px 20px var(--shadow);
+      animation: fadeIn 1s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+   .about-wrapper h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--main-color);
+    }
+
+    .about-wrapper h2 {
+      margin-top: 2rem;
+      color: var(--accent-color);
+      font-size: 1.4rem;
+    }
+
+    .about-wrapper p {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    .highlight-box {
+      background-color: var(--accent-color);
+      color: var(--white);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+      box-shadow: 0 4px 16px rgba(0, 204, 204, 0.25);
+    }
+
+    .developer-photo {
+      display: flex;
+      justify-content: center;
+      margin-top: 3rem;
+    }
+
+    .photo-frame {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid var(--accent-color);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .photo-frame:hover {
+      transform: scale(1.05);
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @media (max-width: 768px) {
+      .about-wrapper {
+        margin: 2rem 1rem;
+        padding: 1.5rem;
+      }
+
+      .about-wrapper h1 {
+        font-size: 2rem;
+      }
+
+      .about-wrapper p {
+        font-size: 1rem;
+      }
+
+      .photo-frame {
+        width: 200px;
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="page-content about-us">
+    <div class="about-wrapper">
+      <h1>About Fuel Mate</h1>
+      <p>
+        Fuel Mate is more than just a dashboard, it's a solution born from a real need for smarter, more transparent access to petrol station services in Malaysia. Designed with users in mind, FuelMate provides meaningful insights on reviews, ratings, services, and facilities at petrol stations across the country.
+      </p>
+
+      <h2>How It All Started</h2>
+      <p>
+        The idea for Fuel Mate came during my final year of studying Information Technology at UiTM Perlis. As someone who frequently drives long distances, I often struggled to find accurate, up-to-date information about petrol stations, especially regarding facilities like toilets, suraus, convenience stores, or EV chargers.
+      </p>
+      <p>
+        Combining my passion for clean user interfaces and data-driven solutions, I began building a dashboard that could help others like me. After months of data collection, API integration, design, and development, FuelMate was born.
+      </p>
+
+      <h2>Meet the Developer</h2>
+      <p>
+        Hi! I’m Irfan, the sole creator of Fuel Mate. This project represents not only my final year submission but also my personal dedication to building something useful for Malaysians on the road. From coding the backend and designing the UI, to integrating services like sentiment analysis, Google Maps, and EV tracking. I did it all with the goal of creating a powerful and friendly platform.
+      </p>
+
+      <div class="developer-photo">
+        <div class="photo-frame">
+          <img src="img/developer.png" alt="Photo of Irfan" />
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        "Fuel Mate is not just a project, it's a personal mission to make travel smarter and more informed."
+      </div>
+    </div>
+  </section>
+</body>
+</html>
